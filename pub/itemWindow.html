@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A&H Fragrances</title>
+
+        <link rel="stylesheet" href="itemWindow.css">
+    </head>
+    <body>
+        <header>
+            <img src="Images/logoClear.png" alt="Company Logo" class="logo">
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle">☰</button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <a href="product.html">← Go Back</a>               
+                    <li><a href="cart.html"><img src="Images/market.png" alt="Cart" class="cart-icon"></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="full-product" data-title=" " data-price=" " data-image=" ">
+            <div id = "left">
+                <div class="item-title">
+                <h1 id="productTitle"></h1>
+                </div>
+                
+                <div class="item-images">
+                <img id="productImage" src=" " alt="Product">
+                </div>
+            </div>
+            
+            <div id="right">
+                <div class="item-variables">   
+                    <!-- <h2>$</h2> -->
+                    <h4>Item description:</h4>
+                    <p id="productDescription"></p>
+                    <h4>Item price:</h4>
+                    <h2 id="productPrice"></h2>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                    <p class="confirmation"></p>
+
+                    
+                    <h4>Shipping Details:</h4>
+                    <p>We process all orders within 1–2 business days. 
+                    Once shipped, you will receive a confirmation email with 
+                    tracking information. Delivery times vary by location, but most 
+                    orders arrive within 3–7 business days. Please ensure your shipping 
+                    address is accurate at checkout, as we are unable to make changes once 
+                    an order has been dispatched. If you have any questions about your shipment,
+                    please contact us, we am always here to help.</p>
+                    <h4>Payments:</h4>
+                    <p>We accept visa and Master cards, as well as zelle and paypal. </p>
+                    <h4>Return Details:</h4>
+                    <p> Returns are only accepted if the item’s packaging is still sealed. If the
+                        seal is broken, the item cannot be returned or exchanged.</p>
+                </div>
+            </div>
+        </div>
+
+    <script src="itemWindow.js"></script>
+    </body>
+</html>
+

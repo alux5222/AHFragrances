@@ -1,0 +1,129 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e8ecf1);
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #000;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* Main Layout */
+main {
+  padding: 2rem;
+  max-width: 650px;
+  margin: 3rem auto;
+}
+
+/* Contact Form Card */
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.4s ease;
+}
+
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52,152,219,0.4);
+  outline: none;
+}
+
+/* Button */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background-color: #7fbce3;
+  cursor: not-allowed;
+}
+
+/* Status Message */
+#formStatus {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  color: white;
+  margin-top: 3rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

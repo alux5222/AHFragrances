@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - ShopEase</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>We'd love to hear from you!</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name<span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email<span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message<span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required placeholder="Your message here..." rows="5"></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopEase. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    //YOUR_PUBLIC_KEY_HERE
+    emailjs.init("2mgRd_En93geNtQVi");
+  </script>
+  
+  <script src="contact.js"></script>
+</body>
+</html>

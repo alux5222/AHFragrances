@@ -1,0 +1,347 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+h2{
+  padding-left: 3.2rem;
+}
+
+header {
+  background-color: #000000;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+.logo{
+  width: 150px;     /* Set desired width */
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222222;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 140px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #222f3b;
+}
+
+nav li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.cart-button{
+  background-color: #000000;
+  color: #ddd;
+  border: #000000;
+}
+
+.cart-icon{
+  width: 2rem;          /* size of the icon */
+  height: 2rem;         /* keep proportions */
+  vertical-align: middle; /* aligns nicely with text */
+  margin-left: 8px;     /* spacing from other items */
+  cursor: pointer;      /* shows pointer on hover */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1); /* subtle zoom effect */
+  opacity: 0.8;          /* slight fade on hover */
+}
+
+.hero {
+  position: relative;
+  height: 200px; /* Full viewport height */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the section */
+  z-index: -1; /* Pushes video behind content */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Keeps text above video */
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+.products-card {
+  padding: 2rem;
+}
+
+.product-list {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 7rem;
+}
+
+/* Individual Product Card */
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 300px;
+}
+
+/* .product-card:hover {
+  transform: scale(1.03);
+} */
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #fff;
+
+}
+
+h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #34495e;
+  cursor: pointer;
+  padding-bottom: 2rem;
+  height: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* thinner */
+}
+
+
+.product-card .price {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-weight: 310;
+}
+
+/* 
+
+.add-to-cart 
+
+*/
+.add-to-cart {
+  /* background-color: #3498dba8; */
+  /* color: rgb(0, 0, 0); */
+  /* border: none; */
+  padding: 0.5rem 1rem;
+  /* cursor: pointer; */
+  /* margin-top: 0.5rem; */
+  border-radius: 12px; /* softer corners */
+  font-size: 1rem;
+
+  width: 12rem;
+  background: rgba(168, 168, 168, 0.023);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border: 2px solid #fff714;                /* neon green */
+  border-radius: 50px;
+
+  color: #000000;                           /* neon text */
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  /* padding: 12px 30px; */
+  /* font-size: 14px; */
+
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+  /* position: relative; */
+  overflow: hidden;
+
+  box-shadow:
+    0 0 12px rgba(247, 255, 20, 0.35),
+    inset 0 0 10px rgba(255, 243, 20, 0.15);
+
+transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+
+}
+
+.add-to-cart:hover {
+  background: rgba(255, 239, 20, 0.1);
+  box-shadow:
+    0 0 20px rgba(255, 243, 20, 0.6),
+    inset 0 0 14px rgba(255, 243, 20, 0.25);
+  transform: translateY(-2px);
+}
+
+.add-to-cart:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 0 10px rgba(235, 255, 20, 0.4);
+}
+
+.add-to-cart.added {
+  background: rgba(213, 228, 8, 0.216);
+  border-color: #f6ff00;
+  color: #000000;
+
+  box-shadow:
+    0 0 25px rgba(246, 255, 0, 0.8),
+    inset 0 0 15px rgba(246, 255, 0, 0.3);
+}
+
+.add-to-cart:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.confirmation{
+  padding-left: 2rem;
+}
+
+
+/* 
+
+FOOTER
+
+*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: white;
+}
+
+
+/* HAMBURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2000; /* stays on top */
+}
+
+/* MOBILE OVERLAY MENU */
+@media (max-width: 768px) {
+
+  h2 {
+    padding-left: 0rem;
+    text-align: center;
+  }
+  /* Keep header stable — do NOT wrap */
+  header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* FULLSCREEN MENU (hidden by default) */
+  nav ul.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;     /* sits on top of entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.85); /* dark overlay */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    gap: 2rem;
+  }
+
+  /* WHEN ACTIVE → SHOW MENU */
+  nav ul.nav-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* SHOW HAMBURGER BUTTON */
+  .menu-toggle {
+    display: block;
+    padding-right: 0rem;
+    padding-left: 55%;
+  }
+
+  /* REMOVE dropdown hover behavior */
+  .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  .cart-button{
+    background-color: #0000000d;
+    color: #ddd;
+    border: #000000;
+  }
+}
