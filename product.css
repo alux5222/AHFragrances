@@ -115,12 +115,12 @@ nav li.dropdown:hover .dropdown-menu {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  /* width: 300px; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
   transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .product-card img {
@@ -129,18 +129,28 @@ nav li.dropdown:hover .dropdown-menu {
   object-fit: contain;
   border-radius: 6px;
   background-color: #fff;
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
 
+.product-card:hover img {
+  transform: scale(1.05);
 }
 
 .product-card h3 {
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   font-size: 1.2rem;
   color: #34495e;
   cursor: pointer;
-  padding-bottom: 2rem;
-  height: 3rem;
+  padding-bottom: 0;
+  min-height: 3rem;
+  margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
   font-weight: 400; /* thinner */
+}
+
+.product-card h3:hover{
+  color: #222;
 }
 
 .product-card .price {
@@ -160,9 +170,6 @@ nav li.dropdown:hover .dropdown-menu {
   /* color: rgb(0, 0, 0); */
   /* border: none; */
   padding: 0.5rem 1rem;
-  /* cursor: pointer; */
-  /* margin-top: 0.5rem; */
-  border-radius: 12px; /* softer corners */
   font-size: 1rem;
 
   width: 12rem;
@@ -178,16 +185,11 @@ nav li.dropdown:hover .dropdown-menu {
   font-weight: 400;
   text-transform: uppercase;
 
-  /* padding: 12px 30px; */
-  /* font-size: 14px; */
-
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   gap: 8px;
 
   cursor: pointer;
-  /* position: relative; */
   overflow: hidden;
 
   box-shadow:
@@ -228,9 +230,10 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s eas
 }
 
 .confirmation{
-  padding-left: 2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding-left: 0;
 }
-
 
 /* Footer */
 footer {
@@ -252,12 +255,11 @@ footer {
 }
 
 /* MOBILE OVERLAY MENU */
-@media (max-width: 768px) {
-
-  /* Keep header stable — do NOT wrap */
-  header {
+@media (min-width:450px) and (max-width: 495px) {
+header {
     position: relative;
     z-index: 1000;
+    justify-content: space-between;
   }
 
   /* FULLSCREEN MENU (hidden by default) */
@@ -277,7 +279,7 @@ footer {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-
+    transform: translateY(-10px);
     gap: 2rem;
   }
 
@@ -285,13 +287,15 @@ footer {
   nav ul.nav-menu.active {
     opacity: 1;
     pointer-events: auto;
+    transform: translateY(0);
   }
 
   /* SHOW HAMBURGER BUTTON */
   .menu-toggle {
     display: block;
-    padding-right: 0rem;
-    padding-left: 55%;
+    /* padding-right: 0rem;
+    padding-left: 55%; */
+    margin-left: auto;
   }
 
   /* REMOVE dropdown hover behavior */
@@ -301,19 +305,128 @@ footer {
     box-shadow: none;
   }
 
+  .cart-button{
+    background-color: #0000000d;
+    color: #ddd;
+    border: #000000;
+  }
+
   /* Product Section */
-.products {
-  padding: 1rem;
+  .products {
+    /* padding: 2rem;
+    max-width: 1200px;
+    margin: auto; */
+    padding: 0rem;   /* FIXES the cutoff */
+    max-width: 100%;   /* prevents squeezing */
+    margin: 0 auto;
+
+  }
+
+  /* Product Grid Layout */
+  .product-grid {
+    /* display: grid; */
+    /* grid-template-columns: 1fr; this is for one column */
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+    gap: 1rem;
+    padding: 0.5rem;
+    /* justify-items: center; */
+    margin: 0 auto;
+  }
+
+  .product-card img {
+    max-width: 100%;
+  }
 }
 
-/* Product Grid Layout */
-.product-grid {
-  /* display: flex; */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding: 2rem;
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
-}
+
+/* TABLET LAYOUT — 2 columns, balanced spacing */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  /* Reduce padding so the grid fits comfortably */
+  .products {
+    padding: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* FULLSCREEN MENU (hidden by default) */
+  nav ul.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;     /* sits on top of entire screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.85); /* dark overlay */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    transform: translateY(-10px);
+    gap: 2rem;
+  }
+
+  /* WHEN ACTIVE → SHOW MENU */
+  nav ul.nav-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* SHOW HAMBURGER BUTTON */
+  .menu-toggle {
+    display: block;
+    /* padding-right: 0rem;
+    padding-left: 55%; */
+    margin-left: auto;
+  }
+
+  /* REMOVE dropdown hover behavior */
+  .dropdown-menu {
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  .cart-button{
+    background-color: #0000000d;
+    color: #ddd;
+    border: #000000;
+  }
+
+  /* Two-column grid for tablets */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  /* Slightly larger images for tablet screens */
+  .product-card img {
+    height: 220px;
+    object-fit: contain;
+  }
+
+  /* Improve title readability */
+  .product-card h3 {
+    font-size: 1.3rem;
+    min-height: 3.5rem;
+  }
+
+  /* Slightly larger price text */
+  .product-card .price {
+    font-size: 1.25rem;
+  }
+
+  /* Buttons scale nicely on tablets */
+  .add-to-cart {
+    width: 14rem;
+    font-size: 1.05rem;
+  }
 }
